@@ -1,0 +1,18 @@
+#! /bin/sh -eu
+#
+# SPDX-License-Identifier: BSD-2-Clause
+# X-SPDX-Copyright-Text: (c) 2020 Xilinx, Inc.
+
+filelist="/usr/libexec/zf/uninstall_manifest"
+
+echo "Uninstalling TCPDirect"
+
+for path in $(cat ${filelist}); do
+    echo "Deleting ${path}"
+    rm -rf "${path}"
+    case "${path}" in
+        *.so*) ldconfig -n "$(dirname ${path})"
+    esac
+done
+
+echo "Uninstall complete"

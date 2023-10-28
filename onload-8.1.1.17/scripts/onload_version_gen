@@ -1,0 +1,4 @@
+echo "#define ONLOAD_VERSION  \"8.1.1.17\""
+echo "#define ONLOAD_SHORT_VERSION ONLOAD_VERSION"
+echo "#define ONLOAD_PRODUCT \"Onload\""
+echo "#define ONLOAD_COPYRIGHT \"Copyright (c) 2002-2023 Advanced Micro Devices, Inc.\""
