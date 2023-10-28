@@ -1,0 +1,4 @@
+echo "#define ONLOAD_VERSION  \"8.0.0.34\""
+echo "#define ONLOAD_SHORT_VERSION ONLOAD_VERSION"
+echo "#define ONLOAD_PRODUCT \"Onload\""
+echo "#define ONLOAD_COPYRIGHT \"Copyright 2019-2022 Xilinx, 2006-2019 Solarflare Communications, 2002-2005 Level 5 Networks\""

@@ -1,0 +1,83 @@
+Onload-8.0.0
+============
+
+ This is a feature release of Onload incorporating a significantly updated
+ version of the 'sfc' net driver (v5.3.12.1023) and supporting major new
+ Operating System releases including Red Hat Enterprise Linux 9.0. Features
+ and fixes since OpenOnload-7.1.3.202 are included.
+
+ TCPDirect is now supplied as a separate package.
+
+
+Linux distribution support
+--------------------------
+
+ This package can be installed on:
+ - Red Hat Enterprise Linux 7.8 - 7.9
+ - Red Hat Enterprise Linux 8.2 - 8.6
+ - Red Hat Enterprise Linux 9.0
+ - SuSE Linux Enterprise Server 15 SP1 - SP3
+ - Canonical Ubuntu Server LTS 20.04 and 22.04
+ - Canonical Ubuntu Server 21.10
+ - Debian 10 "Buster"
+ - Debian 11 "Bullseye"
+ - Linux kernels 4.15 - 5.15
+
+
+Packaging, source and licensing changes
+---------------------------------------
+
+The Onload control plane is now distributed as source code rather than a
+binary and built from source with Onload. The control plane, ef_vi and
+various other components are now provided with a BSD 2-Clause licence.
+
+TCP Direct has been moved into a separate package which should be installed
+with a corresponding version of Onload. For example, tcpdirect-8.0.0.x
+should be used with onload-8.0.0.y.
+
+The table below summarises the situation for each component:
+
+  |--------------------+-------------+-------------+-----------------|
+  |                    | Supplied as | Licence     | Package         |
+  |--------------------+-------------+-------------+-----------------|
+  | Onload             | source      | GPL-2.0     | onload-8.0.0    |
+  |--------------------+-------------+-------------+-----------------|
+  | Onload headers     | source      | GPL-2.0 or  | onload-8.0.0    |
+  | needed for ef_vi   |             | BSD         |                 |
+  | applications       |             | 2-Clause    |                 |
+  |--------------------+-------------+-------------+-----------------|
+  | Onload extensions  | source      | BSD         | onload-8.0.0    |
+  | stub library       |             | 2-Clause    |                 |
+  |--------------------+-------------+-------------+-----------------|
+  | Control plane      | source      | BSD         | onload-8.0.0    |
+  |                    |             | 2-Clause    |                 |
+  |--------------------+-------------+-------------+-----------------|
+  | User-modifiable    | source      | BSD         | onload-8.0.0    |
+  | scripts & examples |             | 2-Clause    |                 |
+  |--------------------+-------------+-------------+-----------------|
+  | ef_vi              | source      | BSD         | onload-8.0.0    |
+  |                    |             | 2-Clause    |                 |
+  |--------------------+-------------+-------------+-----------------|
+  | TCP Direct         | binary      | Proprietary | tcpdirect-8.0.0 |
+  |--------------------+-------------+-------------+-----------------|
+
+
+Python 3 required
+-----------------
+
+The Python scripts have been updated and now require a Python 3 interpreter.
+
+
+No 32-bit acceleration
+----------------------
+
+This and successor releases do not support the acceleration of
+32-bit applications.
+
+
+sfc_affinity
+------------
+
+The deprecated support for adding steering filters through the sfc_affinity
+driver and the sfcaffinity tool has been removed. sfc_affinity_config has been
+modified to use the sfc_resource driver.
