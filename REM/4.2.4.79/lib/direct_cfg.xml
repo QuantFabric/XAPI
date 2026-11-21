@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<client_cfg login_id="test002" dev_name="p5p2" local_ip="6.6.6.5" dst_udp_ip="6.6.6.6" />
+	<client_cfg login_id="test003" dev_name="p4p2" local_ip="5.5.5.4" dst_udp_ip="5.5.5.5" />
+</config>
+
